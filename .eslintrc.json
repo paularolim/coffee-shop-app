@@ -4,7 +4,12 @@
     "es2021": true,
     "jest": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -14,8 +19,18 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".ts", ".native.js"]
+      }
+    }
+  },
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
-    "react/style-prop-object": [1, { "allow": ["StatusBar"] }]
+    "react/style-prop-object": [1, { "allow": ["StatusBar"] }],
+    "import/extensions": ["error", { "ts": "never" }],
+    "import/no-unresolved": "off"
   }
 }
