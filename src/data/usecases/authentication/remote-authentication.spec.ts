@@ -1,10 +1,12 @@
-import { HttpStatusCode } from '@data/protocols/http';
-import { UnexpectedError, InvalidCredentialsError } from '@domain/errors';
 import { faker } from '@faker-js/faker';
+
+import { HttpStatusCode } from '@data/protocols/http';
 import { HttpPostClientStub } from '@data/test';
+import { UnexpectedError, InvalidCredentialsError } from '@domain/errors';
+import { AccountModel } from '@domain/models';
 import { mockAccount, mockAuthentication } from '@domain/test';
 import { AuthenticationParams } from '@domain/usecases';
-import { AccountModel } from '@domain/models';
+
 import { RemoteAuthentication } from './remote-authentication';
 
 interface SutTypes {
