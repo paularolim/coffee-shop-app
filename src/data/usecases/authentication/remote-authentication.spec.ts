@@ -4,15 +4,17 @@ import { faker } from '@faker-js/faker';
 import { HttpPostClientStub } from '@data/test/mock-http-client';
 import { InvalidCredentialsError } from '@domain/errors/invalid-credentials-error';
 import { mockAuthentication } from '@domain/test/mock-authentication';
+import { AuthenticationParams } from '@domain/usecases/authentication';
+import { AccountModel } from '@domain/models/account-model';
 import { RemoteAuthentication } from './remote-authentication';
 
 interface SutTypes {
-  httpPostClientStub: HttpPostClientStub;
+  httpPostClientStub: HttpPostClientStub<AuthenticationParams, AccountModel>;
   sut: RemoteAuthentication;
 }
 
 const makeSut = (url = faker.internet.url()): SutTypes => {
-  const httpPostClientStub = new HttpPostClientStub();
+  const httpPostClientStub = new HttpPostClientStub<AuthenticationParams, AccountModel>();
   const sut = new RemoteAuthentication(url, httpPostClientStub);
 
   return { httpPostClientStub, sut };
