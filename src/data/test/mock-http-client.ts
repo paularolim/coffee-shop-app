@@ -1,3 +1,4 @@
+import { HttpResponse, HttpStatusCode } from 'data/protocols/http/http-response';
 import { HttpPostClient, HttpPostParams } from 'data/protocols/http/http-post-client';
 
 export class HttpPostClientStub implements HttpPostClient {
@@ -5,9 +6,13 @@ export class HttpPostClientStub implements HttpPostClient {
 
   public body?: Record<string, any>;
 
-  async post(params: HttpPostParams): Promise<void> {
+  public response: HttpResponse = {
+    statusCode: HttpStatusCode.ok,
+  };
+
+  async post(params: HttpPostParams): Promise<HttpResponse> {
     this.url = params.url;
     this.body = params.body;
-    return Promise.resolve();
+    return Promise.resolve(this.response);
   }
 }
