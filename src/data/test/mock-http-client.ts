@@ -3,8 +3,11 @@ import { HttpPostClient, HttpPostParams } from '../protocols/http/http-post-clie
 export class HttpPostClientStub implements HttpPostClient {
   public url?: string;
 
+  public body?: Record<string, any>;
+
   async post(params: HttpPostParams): Promise<void> {
     this.url = params.url;
+    this.body = params.body;
     return Promise.resolve();
   }
 }
