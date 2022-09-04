@@ -1,9 +1,9 @@
 import { HttpStatusCode } from '@data/protocols/http/http-response';
 import { UnexpectedError } from '@domain/errors/unexpected-error';
 import { faker } from '@faker-js/faker';
-import { HttpPostClientStub } from 'data/test/mock-http-client';
-import { InvalidCredentialsError } from 'domain/errors/InvalidCredentialsError';
-import { mockAuthentication } from 'domain/test/mock-authentication';
+import { HttpPostClientStub } from '@data/test/mock-http-client';
+import { InvalidCredentialsError } from '@domain/errors/invalid-credentials-error';
+import { mockAuthentication } from '@domain/test/mock-authentication';
 import { RemoteAuthentication } from './remote-authentication';
 
 interface SutTypes {
