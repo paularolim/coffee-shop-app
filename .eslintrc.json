@@ -31,6 +31,10 @@
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/style-prop-object": [1, { "allow": ["StatusBar"] }],
     "import/extensions": ["error", { "ts": "never" }],
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "no-useless-constructor": "off",
+    "class-methods-use-this": "off",
+    "max-classes-per-file": "off",
+    "import/prefer-default-export": "off"
   }
 }
