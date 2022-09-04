@@ -1,16 +1,13 @@
-import { HttpPostClient } from '../../protocols/http/http-post-client';
 import { HttpPostClientStub } from '../../test/mock-http-client';
 import { RemoteAuthentication } from './remote-authentication';
 
 interface SutTypes {
-  httpPostClientStub: HttpPostClient;
+  httpPostClientStub: HttpPostClientStub;
   sut: RemoteAuthentication;
 }
 
-const makeHttpPostClient = (): HttpPostClient => new HttpPostClientStub();
-
-const makeSut = (url: string): SutTypes => {
-  const httpPostClientStub = makeHttpPostClient();
+const makeSut = (url = 'any_url'): SutTypes => {
+  const httpPostClientStub = new HttpPostClientStub();
   const sut = new RemoteAuthentication(url, httpPostClientStub);
 
   return { httpPostClientStub, sut };
