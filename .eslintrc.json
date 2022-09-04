@@ -35,6 +35,7 @@
     "no-useless-constructor": "off",
     "class-methods-use-this": "off",
     "max-classes-per-file": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }
