@@ -4,7 +4,9 @@
     "paths": {
       "@data/*": ["data/*"],
       "@domain/*": ["domain/*"],
-      "@infra/*": ["infra/*"]
+      "@infra/*": ["infra/*"],
+      "@main/*": ["main/*"],
+      "@presentation/*": ["presentation/*"]
     }
   },
   "extends": "expo/tsconfig.base"

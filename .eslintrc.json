@@ -42,9 +42,16 @@
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": ["/^react/", "module", "/^@data|@domain|@infra/", ["parent", "sibling", "index"]],
+        "groups": [
+          "/^react/",
+          "module",
+          "/^@data|@domain|@infra|@main|@presentation/",
+          ["parent", "sibling", "index"]
+        ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
-    ]
+    ],
+    "global-require": "off",
+    "@typescript-eslint/no-var-requires": "off"
   }
 }
